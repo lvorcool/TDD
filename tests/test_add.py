@@ -8,5 +8,5 @@ from scripts.add_demo import add_demo
 class Test_test_add:
     def test_add(self ):
         assert add_demo(3,5) == 8
-
+        assert add_demo(-1,'2') =='只能输入数字!'
 
