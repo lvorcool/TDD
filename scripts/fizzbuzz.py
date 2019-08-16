@@ -14,4 +14,4 @@ class fizzbuzz:
             result += 'Fizz'
         if self.number % 5 == 0:
             result += 'Buzz'
-        return result
+        return self.number if result == '' else result
