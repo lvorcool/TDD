@@ -29,3 +29,9 @@ class argsParse:
             else:
                 return False
         return True
+
+    def get_flag_value(self, flag):
+        if self.assert_flag_type(flag) and self.assert_flag_consistent():
+            return self.args['-' + flag]
+        else:
+            return self.schema[flag][2]
