@@ -8,6 +8,8 @@ from scripts.schema import schemaParse
 
 class Test_test_schema:
     def test_schema_parse(self, ):
-        # schema_text = 'l:bool p:int d:str'
-        schema_text = 'l:bool'
-        assert schemaParse(schema_text).schema_parse() == {'l': (bool, False, '该参数 l 的类型是 bool')}
+        schema_text = 'l:bool p:int d:str'
+        # schema_text = 'l:bool'
+        assert schemaParse(schema_text).schema_parse() == {'l': (bool, False, '该参数 l 的类型是 bool'),
+                                                           'p': (int, 0, '该参数 p 的类型是 int'),
+                                                           'd': (str, '', '该参数 d 的类型是 str')}
