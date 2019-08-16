@@ -18,3 +18,6 @@ class command:
                 continue
             command_format[command_list[index - 1]] = command
         return command_format
+
+    def command_len(self):
+        return len(self.command_parse())
