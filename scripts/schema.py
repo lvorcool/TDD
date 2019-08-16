@@ -18,6 +18,9 @@ class schemaParse:
                                                                                                              flag_type)
         return schema_dict
 
+    def schema_len(self):
+        return len(self.schema_parse())
+
 
 if __name__ == '__main__':
     text = 'l:bool'
