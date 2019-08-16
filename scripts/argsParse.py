@@ -19,3 +19,13 @@ class argsParse:
             if isinstance(flag_value, eval(flag_type)):
                 return True
         return False
+
+    def assert_flag_consistent(self):
+        if not len(self.schema) == len(self.args):
+            return False
+        for flag in self.args:
+            if flag[1:] in self.schema:
+                continue
+            else:
+                return False
+        return True
