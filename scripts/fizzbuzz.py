@@ -11,3 +11,5 @@ class fizzbuzz:
     def fizzbuzz(self):
         if self.number % 3 ==0:
             return 'Fizz'
+        if self.number % 5 ==0:
+            return 'Buzz'
