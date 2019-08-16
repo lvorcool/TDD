@@ -5,11 +5,13 @@
 
 
 class fizzbuzz:
-    def __init__(self,number):
+    def __init__(self, number):
         self.number = number
 
     def fizzbuzz(self):
-        if self.number % 3 ==0:
-            return 'Fizz'
-        if self.number % 5 ==0:
-            return 'Buzz'
+        result = ''
+        if self.number % 3 == 0:
+            result += 'Fizz'
+        if self.number % 5 == 0:
+            result += 'Buzz'
+        return result
