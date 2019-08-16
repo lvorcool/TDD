@@ -14,3 +14,5 @@ class Test_command:
     def test_command_len(self):
         command_input = '-l -p 8080 -d /usr/log'
         assert command(command_input).command_len() == 3
+
+
