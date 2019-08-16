@@ -14,8 +14,8 @@ class schemaParse:
         schema_dict = {}
         for schema in schema_list:
             [flag_name, flag_type] = schema.split(':')
-            schema_dict[flag_name] = eval(flag_type), eval('{}()'.format(flag_type)), '该参数 {} 的类型是 {}'.format(flag_name,
-                                                                                                             flag_type)
+            schema_dict[flag_name] = flag_type, eval('{}()'.format(flag_type)), '该参数 {} 的类型是 {}'.format(flag_name,
+                                                                                                        flag_type)
         return schema_dict
 
     def schema_len(self):
