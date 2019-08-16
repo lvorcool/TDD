@@ -10,8 +10,11 @@ class fizzbuzz:
 
     def fizzbuzz(self):
         result = ''
-        if self.number % 3 == 0:
+        if self.is_divisible_or_is_contain(3):
             result += 'Fizz'
-        if self.number % 5 == 0:
+        if self.is_divisible_or_is_contain(5):
             result += 'Buzz'
         return self.number if result == '' else result
+
+    def is_divisible_or_is_contain(self,arg):
+        return self.number % arg ==0 or str(arg) in str(self.number)
