@@ -35,3 +35,4 @@ class Test_test_argsParse:
                   'p': ('int', 0, '该参数 p 的类型是 int'),
                   'd': ('str', '', '该参数 d 的类型是 str')}
         assert argsParse(schema,args).get_flag_value('l') == False
+        assert argsParse(schema,args).get_flag_value('p') == 8080
