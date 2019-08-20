@@ -17,8 +17,9 @@ class argsParse:
             flag_type, flag_default_value, flag_description = self.schema[flag]
             flag_value = self.args['-' + flag]
             try:
-                flag_value = eval('{}({})'.format(flag_type, flag_value))
-                self.set_args_value(flag,flag_value)
+                if not isinstance(flag_value, eval(flag_type)):
+                    flag_value = eval('{}({})'.format(flag_type, flag_value))
+                    self.set_args_value(flag, flag_value)
             except ValueError:
                 return False
             if isinstance(flag_value, eval(flag_type)):

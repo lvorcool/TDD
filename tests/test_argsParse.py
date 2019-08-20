@@ -36,3 +36,4 @@ class Test_test_argsParse:
                   'd': ('str', '', '该参数 d 的类型是 str')}
         assert argsParse(schema,args).get_flag_value('l') == False
         assert argsParse(schema,args).get_flag_value('p') == 8080
+        assert argsParse(schema,args).get_flag_value('d') == '/usr/log'
