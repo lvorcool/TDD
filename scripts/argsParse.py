@@ -8,12 +8,17 @@ class argsParse:
         self.schema = schema
         self.args = args
 
+    def set_args_value(self, flag, flag_value):
+        self.args['-' + flag] = flag_value
+        return self.args
+
     def assert_flag_type(self, flag):
         if '-' + flag in self.args and flag in self.schema:
             flag_type, flag_default_value, flag_description = self.schema[flag]
             flag_value = self.args['-' + flag]
             try:
                 flag_value = eval('{}({})'.format(flag_type, flag_value))
+                self.set_args_value(flag,flag_value)
             except ValueError:
                 return False
             if isinstance(flag_value, eval(flag_type)):
