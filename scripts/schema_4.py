@@ -4,6 +4,12 @@
 # Description:
 
 class Schema:
+    def schema_parse(self,schema_text):
+        schema_result = {}
+        for s in schema_text.split(' '):
+            flag_name, flag_value = s.split(':')
+            schema_result[flag_name] = flag_value
+        return schema_result
 
     def get(self, flag):
         if flag == 'l':
