@@ -4,17 +4,16 @@
 # Description:
 
 class Schema:
-    def schema_parse(self,schema_text):
+    def __init__(self, schema_text):
+        self.schema_text = schema_text
+
+    def schema_parse(self):
         schema_result = {}
-        for s in schema_text.split(' '):
+        for s in self.schema_text.split(' '):
             flag_name, flag_value = s.split(':')
             schema_result[flag_name] = flag_value
         return schema_result
 
     def get(self, flag):
-        if flag == 'l':
-            return 'bool'
-        elif flag == 'p':
-            return 'int'
-        elif flag == 'd':
-            return 'str'
+        schema_result = self.schema_parse()
+        return schema_result.get(flag, str)
