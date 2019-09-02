@@ -8,6 +8,7 @@ from scripts.command_5 import Command
 class Test_test_command_5:
     def test_command(self, ):
         command_text = '-l true -p 8080 -d /usr/local'
-        assert Command(command_text).get('l') == True
-
+        assert Command(command_text).get('l') == 'true'
+        assert Command(command_text).get('p') == '8080'
+        assert Command(command_text).get('d') == '/usr/local'
 
