@@ -13,4 +13,4 @@ class Args6:
         self.command = Command(command_text)
 
     def get_value(self, flag):
-        return self.schema.get(self.command.get(flag))
+        return self.schema.get(flag, self.command.get(flag))
