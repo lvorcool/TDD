@@ -28,4 +28,3 @@ class CommandParse:
     def get_value(self, flag):
         command_dict = self.command_parse()
         return command_dict.get('-' + flag, None)
-
