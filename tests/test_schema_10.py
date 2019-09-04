@@ -10,3 +10,5 @@ class Test_test_schema_10:
     def test_schema10(self, ):
         schema_text = 'l:bool p:8080 d:/usr/local'
         assert Schema10(schema_text).get_value('l') == 'bool'
+        assert Schema10(schema_text).get_value('p') == '8080'
+        assert Schema10(schema_text).get_value('d') == '/usr/local'

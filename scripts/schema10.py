@@ -8,7 +8,12 @@ class Schema10:
     def __init__(self, schema_text):
         self.schema_text = schema_text
 
-    def get_value(self,flag):
-            if flag == 'l':
-                return 'bool'
+    def schema_parse(self):
+        schema_result = {}
+        for s in self.schema_text.split(' '):
+            flag_name, flag_type = s.split(':')
+            schema_result[flag_name] = flag_type
+        return schema_result
 
+    def get_value(self, flag):
+        return self.schema_parse().get(flag)
