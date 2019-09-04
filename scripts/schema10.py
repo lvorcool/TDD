@@ -15,5 +15,11 @@ class Schema10:
             schema_result[flag_name] = flag_type
         return schema_result
 
-    def get_value(self, flag):
-        return self.schema_parse().get(flag)
+    def get_value(self, flag, str_value):
+        flag_type = self.schema_parse().get(flag)
+        if flag_type == 'bool':
+            return 'true' == str_value or not str_value
+        elif flag_type == 'int':
+            return int(str_value)
+        else:
+            return str_value
