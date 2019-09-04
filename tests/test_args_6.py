@@ -11,5 +11,5 @@ class Test_args6:
         schema_text = 'l:bool p:int d:str'
         command_text = 'l true p 8080 d /usr/local'
         Args6(schema_text, command_text).get_value('l') == True
-
-        
+        Args6(schema_text, command_text).get_value('p') == 8080
+        Args6(schema_text, command_text).get_value('d') == '/usr/local'
