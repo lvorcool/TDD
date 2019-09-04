@@ -10,5 +10,7 @@ from scripts.command10 import Command10
 class Test_test_command10:
     def test_command10(self, ):
         command_text = '-l true -p 8080 -d /usr/local'
-        assert Command10(command_text).get_value('l') == 'true'
+        assert Command10(command_text).get_value('-l') == 'true'
+        assert Command10(command_text).get_value('-p') == '8080'
+        assert Command10(command_text).get_value('-d') == '/usr/local'
 
