@@ -6,3 +6,7 @@
 
 def flow_01(a):
     return a
+
+
+def flow_02(b):
+    return b + 2
