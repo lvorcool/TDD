@@ -21,3 +21,7 @@ class command:
 
     def command_len(self):
         return len(self.command_parse())
+
+
+
+
