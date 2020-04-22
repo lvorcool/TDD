@@ -71,6 +71,31 @@ wild_goose = WildGoose()
 swallow = Swallow()
 penguin = Penguin()
 
+
+class BuildHouse(Bird):
+    def __init__(self, bird):
+        self.bird = bird
+
+    def builder(self, time):
+        action = 'buiding a house'
+        self.report_status(time, action)
+
+    def get_name(self):
+        return self.bird.get_name()
+
+
+class Program(Bird):
+    def __init__(self, bird):
+        self.bird = bird
+
+    def program(self, time):
+        action = 'programing'
+        self.report_status(time, action)
+
+    def get_name(self):
+        return self.bird.get_name()
+
+
 birds: [Bird] = [wild_goose, swallow, penguin]
 
 time = '7:00'
@@ -94,3 +119,15 @@ time = '11:00'
 for bird in birds:
     if isinstance(bird, Swimmer):
         bird.swim(time)
+
+penguin_build = BuildHouse(penguin)
+wild_goose_build = BuildHouse(wild_goose)
+time = '13:00'
+penguin_build.builder(time)
+wild_goose_build.builder(time)
+
+swallow_program = Program(swallow)
+wild_goose_program = Program(wild_goose)
+time = '14:00'
+swallow_program.program(time)
+wild_goose_program.program(time)
